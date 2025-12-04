@@ -1,0 +1,26 @@
+# webOS build files
+*.ipk
+.vscode/
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Icons (generated from SVG)
+#icon.png
+#largeIcon.png
+
+# Temporary files
+*.tmp
+*.bak
+*~

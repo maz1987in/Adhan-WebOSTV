@@ -1,0 +1,34 @@
+{
+  "id": "com.adhan.reminder",
+  "version": "1.0.0",
+  "vendor": "Adhan Reminder",
+  "type": "web",
+  "main": "index.html",
+  "title": "Adhan Reminder",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "requiredPermissions": [
+    "time",
+    "time.query",
+    "activity.operation"
+  ],
+  "resolution": "1920x1080",
+  "bgImage": "icon.png",
+  "iconColor": "#2c5f2d",
+  "splashBackground": "icon.png",
+  "disableBackHistoryAPI": false,
+  "transparent": false,
+  "supportedLocales": [
+    "en-US",
+    "ar-SA",
+    "fr-FR",
+    "de-DE",
+    "es-ES"
+  ],
+  "v2": {
+    "requiredPermissions": [
+      "activity.operation"
+    ]
+  }
+}
+

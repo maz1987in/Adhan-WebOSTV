@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Screen Management */
+.screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 60px;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 36px;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-icon:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background: #27ae60;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    padding: 20px 50px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #229954;
+    transform: scale(1.05);
+}
+
+/* Next Prayer Section */
+.next-prayer {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.next-prayer h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.prayer-name {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.countdown {
+    font-size: 96px;
+    font-weight: bold;
+    color: #ffd700;
+    font-family: 'Courier New', monospace;
+}
+
+/* Prayer Schedule */
+.prayer-schedule {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.prayer-schedule h3 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.prayer-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.prayer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px 35px;
+    border-radius: 12px;
+    font-size: 36px;
+    transition: all 0.3s;
+}
+
+.prayer-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.prayer-label {
+    font-weight: bold;
+}
+
+.prayer-time {
+    font-family: 'Courier New', monospace;
+    color: #ffd700;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
+    right: 60px;
+    text-align: center;
+    font-size: 28px;
+    opacity: 0.8;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+/* Settings Screen */
+.settings-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.setting-group {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.setting-group h3 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #ffd700;
+}
+
+.setting-item {
+    margin-bottom: 30px;
+}
+
+.setting-item label {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.setting-item input,
+.setting-item select {
+    width: 100%;
+    padding: 20px;
+    font-size: 32px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.setting-item input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.setting-item select option {
+    background: #2a5298;
+    color: #ffffff;
+}
+
+.setting-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Toast Notification */
+.toast-notification {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+}
+
+.toast-notification.hidden {
+    bottom: -200px;
+    opacity: 0;
+}
+
+.toast-content {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    border-radius: 20px;
+    padding: 30px 50px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    min-width: 600px;
+}
+
+.toast-icon {
+    font-size: 64px;
+}
+
+.toast-text {
+    flex: 1;
+}
+
+.toast-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.toast-time {
+    font-size: 36px;
+    opacity: 0.9;
+    font-family: 'Courier New', monospace;
+}
+
+.toast-dismiss {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #ffffff;
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.toast-dismiss:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Fullscreen Notification */
+.fullscreen-notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.fullscreen-notification.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fullscreen-content {
+    text-align: center;
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.fullscreen-icon {
+    font-size: 200px;
+    margin-bottom: 40px;
+}
+
+.fullscreen-title {
+    font-size: 72px;
+    margin-bottom: 30px;
+    color: #ffd700;
+}
+
+.fullscreen-prayer-name {
+    font-size: 120px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.fullscreen-prayer-time {
+    font-size: 96px;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 60px;
+    color: #27ae60;
+}
+
+/* Responsive adjustments for focus */
+button:focus,
+input:focus,
+select:focus {
+    outline: 3px solid #ffd700;
+    outline-offset: 5px;
+}
+
+/* RTL (Right-to-Left) Support */
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+body.rtl .header {
+    flex-direction: row-reverse;
+}
+
+body.rtl .setting-item {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+body.rtl .setting-item label {
+    text-align: right;
+}
+
+body.rtl .prayer-item {
+    flex-direction: row-reverse;
+}
+
+body.rtl .toast-content {
+    flex-direction: row-reverse;
+}
+
+body.rtl .toast-dismiss {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+body.rtl #back-btn {
+    transform: scaleX(-1);
+}
+
+/* Language-specific font adjustments */
+[lang="ar"] {
+    font-family: 'Traditional Arabic', 'Arabic Typesetting', 'Geeza Pro', Arial, sans-serif;
+}
+
+[lang="ar"] .btn-primary,
+[lang="ar"] .btn-icon {
+    font-family: 'Traditional Arabic', 'Arabic Typesetting', 'Geeza Pro', Arial, sans-serif;
+    font-size: 38px;
+}
+
+[lang="ar"] h1 {
+    font-size: 72px;
+    font-weight: bold;
+}
+
+[lang="ar"] .prayer-name {
+    font-size: 68px;
+}
+
