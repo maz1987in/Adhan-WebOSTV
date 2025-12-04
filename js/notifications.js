@@ -74,6 +74,14 @@ class NotificationManager {
         // Show toast
         this.toastElement.classList.remove('hidden');
         this.currentNotification = 'toast';
+        
+        // Focus dismiss button for remote control
+        setTimeout(() => {
+            const dismissBtn = document.getElementById('toast-dismiss');
+            if (dismissBtn) {
+                dismissBtn.focus();
+            }
+        }, 100);
     }
 
     // Show fullscreen notification
@@ -95,6 +103,14 @@ class NotificationManager {
         // Show fullscreen
         this.fullscreenElement.classList.remove('hidden');
         this.currentNotification = 'fullscreen';
+        
+        // Focus dismiss button for remote control
+        setTimeout(() => {
+            const dismissBtn = document.getElementById('fullscreen-dismiss');
+            if (dismissBtn) {
+                dismissBtn.focus();
+            }
+        }, 100);
     }
 
     // Dismiss toast notification

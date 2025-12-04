@@ -53,7 +53,7 @@ ares-setup-device
 # - Password: [leave blank]
 
 # Package the app
-cd /Users/macmini/Documents/GitHub/adhan
+cd ./adhan
 ares-package .
 
 # Install on TV

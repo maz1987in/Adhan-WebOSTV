@@ -45,7 +45,7 @@
 Navigate to the app directory and create the package:
 
 ```bash
-cd /Users/macmini/Documents/GitHub/adhan
+cd ./adhan
 ares-package .
 ```
 

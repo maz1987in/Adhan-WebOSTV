@@ -5,16 +5,33 @@ A beautiful, full-featured prayer time reminder application for LG Smart TVs run
 ## 🕌 Features
 
 - **Automatic Prayer Time Calculation**: Uses astronomical calculations based on your location
+- **200+ Cities Worldwide**: Autocomplete search for easy location selection
+- **Manual Coordinates**: Or enter latitude/longitude manually for precise locations
 - **Multiple Calculation Methods**: MWL, ISNA, Egyptian, Makkah, Karachi, Tehran, Jafari
 - **Real-time Countdown**: Live countdown timer to the next prayer
 - **Dual Notification Styles**: 
   - Toast notifications (subtle bottom banner)
   - Fullscreen notifications (prominent overlay)
 - **Complete Daily Schedule**: Shows all 5 daily prayers plus sunrise
+- **Multi-Language Support**: English, Arabic, French, German, Spanish with RTL support
+- **Test Mode**: 3-minute notification testing for setup verification
 - **Persistent Settings**: Your configuration is saved locally
 - **Beautiful UI**: Modern, TV-optimized interface with gradient backgrounds
-- **Privacy-First**: All calculations done locally, no internet required after install
-- **Remote Control Friendly**: Full navigation support with TV remote
+- **Privacy-First**: All calculations done locally, no internet required after setup
+- **Full Remote Control Support**: Optimized navigation with Magic Remote
+- **Localized App Metadata**: App name appears in your TV's language
+
+## ⚠️ Important: Background Notifications
+
+**Notifications work ONLY when the app is visible on screen.** This is a webOS TV platform limitation - third-party apps cannot run in the background.
+
+**Recommended Use Cases:**
+- ✅ Dedicated prayer times display (mosque, prayer room, spare TV)
+- ✅ Quick reference when needed
+- ✅ Visual countdown display
+- ❌ Background notifications while watching TV (not supported by webOS TV)
+
+See [BACKGROUND_LIMITATIONS.md](BACKGROUND_LIMITATIONS.md) for details and alternatives.
 
 ## 📋 Quick Start
 
@@ -293,11 +310,19 @@ MIT License - Feel free to use and modify for personal or commercial use.
 ## 📊 Version History
 
 **v1.0.0** - Initial Release
-- Prayer time calculation
-- Toast and fullscreen notifications
-- Settings management
-- Real-time countdown
-- Multiple calculation methods
+- ✅ Prayer time calculation with astronomical algorithms
+- ✅ Toast and fullscreen notifications
+- ✅ Settings management with persistence
+- ✅ Real-time countdown timer
+- ✅ Multiple calculation methods (7 methods)
+- ✅ Multi-language support (5 languages + RTL)
+- ✅ Autocomplete location search (200+ cities)
+- ✅ Manual coordinates option
+- ✅ Full remote control navigation
+- ✅ Test mode (3-minute notifications)
+- ✅ Localized app metadata
+- ✅ Complete webOS TV lifecycle management
+- ✅ Follows all LG developer guidelines
 
 ---
 

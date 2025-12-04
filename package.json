@@ -4,7 +4,7 @@
   "description": "Prayer time reminder app for LG webOS TV",
   "main": "index.html",
   "scripts": {
-    "package": "ares-package .",
+    "package": "ares-package . --no-minify",
     "install-tv": "ares-install com.adhan.reminder_1.0.0_all.ipk",
     "launch": "ares-launch com.adhan.reminder",
     "close": "ares-close com.adhan.reminder"

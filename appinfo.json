@@ -5,12 +5,15 @@
   "type": "web",
   "main": "index.html",
   "title": "Adhan Reminder",
+  "subtitle": "Islamic Prayer Times",
   "icon": "icon.png",
   "largeIcon": "largeIcon.png",
   "requiredPermissions": [
     "time",
     "time.query",
-    "activity.operation"
+    "activity.operation",
+    "notifications.operation",
+    "applications.operation"
   ],
   "resolution": "1920x1080",
   "bgImage": "icon.png",
@@ -18,6 +21,8 @@
   "splashBackground": "icon.png",
   "disableBackHistoryAPI": false,
   "transparent": false,
+  "keepAlive": true,
+  "handlesRelaunch": true,
   "supportedLocales": [
     "en-US",
     "ar-SA",
@@ -25,6 +30,7 @@
     "de-DE",
     "es-ES"
   ],
+  "appDescription": "Display accurate Islamic prayer times with customizable notifications. Select your location from 200+ cities worldwide or enter coordinates manually. Supports multiple calculation methods and languages including Arabic, English, French, German, and Spanish.",
   "v2": {
     "requiredPermissions": [
       "activity.operation"

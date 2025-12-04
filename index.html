@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1920, height=1080, user-scalable=no">
+    <meta name="description" content="Islamic prayer times reminder app for webOS TV">
+    <meta name="keywords" content="prayer times, adhan, azan, islamic, muslim, salah">
     <title>Adhan Reminder</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -54,6 +56,9 @@
             <div class="footer">
                 <p id="location-display" data-i18n="location.not.set">Location not set</p>
                 <p id="date-display"></p>
+                <p id="background-notice" style="font-size: 20px; color: #ffd700; margin-top: 10px;">
+                    ⚠️ <span data-i18n="background.notice">Keep app visible for notifications - Best for dedicated displays</span>
+                </p>
             </div>
         </div>
         
@@ -67,17 +72,62 @@
             <div class="settings-content">
                 <div class="setting-group">
                     <h3 data-i18n="location.title">Location</h3>
+                    
+                    <!-- Location Mode Selection -->
                     <div class="setting-item">
-                        <label for="latitude" data-i18n="latitude">Latitude:</label>
-                        <input type="number" id="latitude" step="0.0001" data-i18n-placeholder="placeholder.latitude" placeholder="e.g., 21.4225">
+                        <label for="location-mode" data-i18n="location.mode">Location Mode:</label>
+                        <select id="location-mode">
+                            <option value="city" data-i18n-value="location.mode.city">Select Country & City</option>
+                            <option value="manual" data-i18n-value="location.mode.manual">Manual Coordinates</option>
+                        </select>
                     </div>
-                    <div class="setting-item">
-                        <label for="longitude" data-i18n="longitude">Longitude:</label>
-                        <input type="number" id="longitude" step="0.0001" data-i18n-placeholder="placeholder.longitude" placeholder="e.g., 39.8262">
+                    
+                    <!-- City Selection Mode - Autocomplete -->
+                    <div id="city-selection-mode">
+                        <div class="setting-item">
+                            <label for="location-search" data-i18n="location.search">Search Location:</label>
+                            <input type="text" id="location-search" data-i18n-placeholder="location.search.placeholder" placeholder="Type city or country name...">
+                        </div>
+                        
+                        <!-- Search Results -->
+                        <div id="location-results" class="location-results" style="display: none;">
+                            <div id="location-results-list" class="location-results-list">
+                                <!-- Results will be populated here -->
+                            </div>
+                        </div>
+                        
+                        <!-- No results message -->
+                        <div id="no-results" class="no-results" style="display: none;">
+                            <p data-i18n="location.no.results">No locations found. Try a different search.</p>
+                        </div>
                     </div>
-                    <div class="setting-item">
-                        <label for="timezone" data-i18n="timezone">Timezone Offset (hours):</label>
-                        <input type="number" id="timezone" step="0.5" data-i18n-placeholder="placeholder.timezone" placeholder="e.g., 3">
+                    
+                    <!-- Manual Coordinates Mode -->
+                    <div id="manual-coordinates-mode" style="display: none;">
+                        <div class="setting-item">
+                            <label for="latitude" data-i18n="latitude">Latitude:</label>
+                            <input type="number" id="latitude" step="0.0001" data-i18n-placeholder="placeholder.latitude" placeholder="e.g., 21.4225">
+                        </div>
+                        <div class="setting-item">
+                            <label for="longitude" data-i18n="longitude">Longitude:</label>
+                            <input type="number" id="longitude" step="0.0001" data-i18n-placeholder="placeholder.longitude" placeholder="e.g., 39.8262">
+                        </div>
+                        <div class="setting-item">
+                            <label for="timezone" data-i18n="timezone">Timezone Offset (hours):</label>
+                            <input type="number" id="timezone" step="0.5" data-i18n-placeholder="placeholder.timezone" placeholder="e.g., 3">
+                        </div>
+                    </div>
+                    
+                    <!-- Display selected location -->
+                    <div class="setting-item" id="selected-location-display" style="margin-top: 20px;">
+                        <p id="location-coordinates" style="font-size: 24px; color: #ffd700;"></p>
+                    </div>
+                    
+                    <!-- Helper text for remote control -->
+                    <div class="setting-item" style="margin-top: 10px; background: rgba(255, 215, 0, 0.1); padding: 20px; border-radius: 12px; border: 2px solid rgba(255, 215, 0, 0.3);">
+                        <p style="font-size: 24px; color: #ffd700; text-align: center; font-weight: bold; margin: 0;">
+                            <span data-i18n="help.instructions">⬆️⬇️ Navigate | ⬅️➡️ Change Dropdown | OK Activate/Select | 🔙 Back</span>
+                        </p>
                     </div>
                 </div>
                 
@@ -122,6 +172,20 @@
                     </div>
                 </div>
                 
+                <div class="setting-group" style="border: 2px solid #ff9800; background: rgba(255, 152, 0, 0.1);">
+                    <h3 style="color: #ff9800;">🧪 <span data-i18n="test.mode">Test Mode</span></h3>
+                    <div class="setting-item">
+                        <label for="test-mode" data-i18n="test.mode.label">Enable Test Notifications (Every 3 min):</label>
+                        <select id="test-mode">
+                            <option value="off" data-i18n-value="test.mode.off">Off</option>
+                            <option value="on" data-i18n-value="test.mode.on">On (Testing)</option>
+                        </select>
+                    </div>
+                    <p style="font-size: 20px; color: #ff9800; margin-top: 10px;">
+                        <span data-i18n="test.mode.warning">⚠️ Test mode sends notifications every 3 minutes. Disable after testing!</span>
+                    </p>
+                </div>
+                
                 <div class="setting-actions">
                     <button id="save-settings-btn" class="btn-primary" data-i18n="save.settings">Save Settings</button>
                 </div>
@@ -152,7 +216,9 @@
         </div>
     </div>
     
+    <script src="webOSTVjs/webOSTV.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="js/locations.js"></script>
     <script src="js/prayer-times.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/notifications.js"></script>

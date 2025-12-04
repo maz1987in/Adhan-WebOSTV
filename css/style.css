@@ -205,15 +205,35 @@ body {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.15);
     color: #ffffff;
+    transition: all 0.3s;
 }
 
 .setting-item input::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.setting-item select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 32px;
+    padding-right: 60px;
+}
+
 .setting-item select option {
     background: #2a5298;
     color: #ffffff;
+    padding: 15px;
+    font-size: 28px;
+}
+
+.setting-item select:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .setting-actions {
@@ -344,12 +364,128 @@ body {
     color: #27ae60;
 }
 
-/* Responsive adjustments for focus */
+/* Focus styles for TV remote navigation */
 button:focus,
 input:focus,
 select:focus {
-    outline: 3px solid #ffd700;
-    outline-offset: 5px;
+    outline: 4px solid #ffd700 !important;
+    outline-offset: 6px !important;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6) !important;
+    transform: scale(1.05);
+}
+
+.btn-icon:focus,
+.btn-primary:focus {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.btn-primary:focus {
+    background: #2ecc71;
+}
+
+input:focus,
+select:focus {
+    border-color: #ffd700 !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Input field states - readonly (navigating) vs active (editing) */
+input[readonly] {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15) !important;
+    position: relative;
+}
+
+/* Readonly input - navigation mode (gold outline when focused) */
+input[readonly]:focus {
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.7) !important;
+}
+
+/* Active input - editing mode (green outline when focused) */
+input:not([readonly]) {
+    background: rgba(255, 255, 255, 0.35) !important;
+    border-color: #4CAF50 !important;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.6) !important;
+}
+
+input:not([readonly]):focus {
+    border-color: #4CAF50 !important;
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.9) !important;
+}
+
+/* Add hint text for readonly inputs */
+.setting-item label::after {
+    content: " ";
+}
+
+input[readonly]:focus + .input-hint,
+input[readonly]:focus ~ .input-hint {
+    display: block;
+}
+
+select:focus {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8) !important;
+}
+
+/* Location Autocomplete Results */
+.location-results {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.location-results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.location-result-item {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 28px;
+}
+
+.location-result-item:hover,
+.location-result-item:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #ffd700;
+    transform: translateX(10px);
+    outline: 4px solid #ffd700;
+    outline-offset: 4px;
+}
+
+.location-result-item .city-name {
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 32px;
+}
+
+.location-result-item .country-name {
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 15px;
+}
+
+.location-result-item .coordinates {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 22px;
+    margin-top: 8px;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 28px;
 }
 
 /* RTL (Right-to-Left) Support */

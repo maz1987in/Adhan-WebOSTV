@@ -35,6 +35,12 @@ class I18nManager {
                 'settings': 'Settings',
                 'back': 'Back',
                 'location.title': 'Location',
+                'location.mode': 'Location Mode',
+                'location.mode.city': 'Select Country & City',
+                'location.mode.manual': 'Manual Coordinates',
+                'location.search': 'Search Location',
+                'location.search.placeholder': 'Type city or country name...',
+                'location.no.results': 'No locations found. Try a different search.',
                 'latitude': 'Latitude',
                 'longitude': 'Longitude',
                 'timezone': 'Timezone Offset (hours)',
@@ -73,13 +79,27 @@ class I18nManager {
                 'settings.saved': 'Settings saved successfully!',
                 'error.saving': 'Error saving settings',
                 'error.invalid.coordinates': 'Please enter valid location coordinates and timezone',
+                'error.no.location.selected': 'Please search and select a location',
                 'error.latitude.range': 'Latitude must be between -90 and 90',
                 'error.longitude.range': 'Longitude must be between -180 and 180',
                 
                 // Placeholders
                 'placeholder.latitude': 'e.g., 21.4225',
                 'placeholder.longitude': 'e.g., 39.8262',
-                'placeholder.timezone': 'e.g., 3'
+                'placeholder.timezone': 'e.g., 3',
+                
+                // Help
+                'help.instructions': '⬆️⬇️ Navigate | ⬅️➡️ Change Dropdown | OK Activate/Select | 🔙 Back',
+                
+                // Background Notice
+                'background.notice': 'Keep app visible for notifications - Best for dedicated displays',
+                
+                // Test Mode
+                'test.mode': 'Test Mode',
+                'test.mode.label': 'Enable Test Notifications (Every 3 min)',
+                'test.mode.off': 'Off',
+                'test.mode.on': 'On (Testing)',
+                'test.mode.warning': '⚠️ Test mode sends notifications every 3 minutes. Disable after testing!'
             },
             
             ar: {
@@ -103,6 +123,12 @@ class I18nManager {
                 'settings': 'الإعدادات',
                 'back': 'رجوع',
                 'location.title': 'الموقع',
+                'location.mode': 'طريقة الموقع',
+                'location.mode.city': 'اختر الدولة والمدينة',
+                'location.mode.manual': 'إحداثيات يدوية',
+                'location.search': 'بحث عن الموقع',
+                'location.search.placeholder': 'اكتب اسم المدينة أو الدولة...',
+                'location.no.results': 'لم يتم العثور على مواقع. جرب بحثًا مختلفًا.',
                 'latitude': 'خط العرض',
                 'longitude': 'خط الطول',
                 'timezone': 'المنطقة الزمنية (ساعات)',
@@ -141,13 +167,27 @@ class I18nManager {
                 'settings.saved': 'تم حفظ الإعدادات بنجاح!',
                 'error.saving': 'خطأ في حفظ الإعدادات',
                 'error.invalid.coordinates': 'يرجى إدخال إحداثيات الموقع والمنطقة الزمنية الصحيحة',
+                'error.no.location.selected': 'يرجى البحث واختيار موقع',
                 'error.latitude.range': 'يجب أن يكون خط العرض بين -90 و 90',
                 'error.longitude.range': 'يجب أن يكون خط الطول بين -180 و 180',
                 
                 // Placeholders
                 'placeholder.latitude': 'مثال: 21.4225',
                 'placeholder.longitude': 'مثال: 39.8262',
-                'placeholder.timezone': 'مثال: 3'
+                'placeholder.timezone': 'مثال: 3',
+                
+                // Help
+                'help.instructions': '⬆️⬇️ تنقل | ⬅️➡️ تغيير القائمة | OK تفعيل/اختيار | 🔙 رجوع',
+                
+                // Background Notice
+                'background.notice': 'أبقِ التطبيق مرئيًا للإشعارات - الأفضل للشاشات المخصصة',
+                
+                // Test Mode
+                'test.mode': 'وضع الاختبار',
+                'test.mode.label': 'تفعيل إشعارات الاختبار (كل 3 دقائق)',
+                'test.mode.off': 'متوقف',
+                'test.mode.on': 'مفعّل (اختبار)',
+                'test.mode.warning': '⚠️ وضع الاختبار يرسل إشعارات كل 3 دقائق. أوقفه بعد الاختبار!'
             },
             
             fr: {
@@ -171,6 +211,12 @@ class I18nManager {
                 'settings': 'Paramètres',
                 'back': 'Retour',
                 'location.title': 'Emplacement',
+                'location.mode': 'Mode de Localisation',
+                'location.mode.city': 'Sélectionner Pays et Ville',
+                'location.mode.manual': 'Coordonnées Manuelles',
+                'location.search': 'Rechercher un Lieu',
+                'location.search.placeholder': 'Tapez le nom de la ville ou du pays...',
+                'location.no.results': 'Aucun lieu trouvé. Essayez une autre recherche.',
                 'latitude': 'Latitude',
                 'longitude': 'Longitude',
                 'timezone': 'Décalage Horaire (heures)',
@@ -209,13 +255,27 @@ class I18nManager {
                 'settings.saved': 'Paramètres enregistrés avec succès!',
                 'error.saving': "Erreur lors de l'enregistrement",
                 'error.invalid.coordinates': "Veuillez entrer des coordonnées et un fuseau horaire valides",
+                'error.no.location.selected': 'Veuillez rechercher et sélectionner un lieu',
                 'error.latitude.range': 'La latitude doit être entre -90 et 90',
                 'error.longitude.range': 'La longitude doit être entre -180 et 180',
                 
                 // Placeholders
                 'placeholder.latitude': 'ex: 21.4225',
                 'placeholder.longitude': 'ex: 39.8262',
-                'placeholder.timezone': 'ex: 3'
+                'placeholder.timezone': 'ex: 3',
+                
+                // Help
+                'help.instructions': '⬆️⬇️ Naviguer | ⬅️➡️ Menu | OK Activer/Sélectionner | 🔙 Retour',
+                
+                // Background Notice
+                'background.notice': 'Gardez l\'app visible pour les notifications - Idéal pour écrans dédiés',
+                
+                // Test Mode
+                'test.mode': 'Mode Test',
+                'test.mode.label': 'Activer Notifications Test (Toutes les 3 min)',
+                'test.mode.off': 'Désactivé',
+                'test.mode.on': 'Activé (Test)',
+                'test.mode.warning': '⚠️ Le mode test envoie des notifications toutes les 3 minutes. Désactivez après le test!'
             },
             
             de: {
@@ -239,6 +299,12 @@ class I18nManager {
                 'settings': 'Einstellungen',
                 'back': 'Zurück',
                 'location.title': 'Standort',
+                'location.mode': 'Standortmodus',
+                'location.mode.city': 'Land und Stadt Wählen',
+                'location.mode.manual': 'Manuelle Koordinaten',
+                'location.search': 'Standort Suchen',
+                'location.search.placeholder': 'Geben Sie Stadt oder Land ein...',
+                'location.no.results': 'Keine Standorte gefunden. Versuchen Sie eine andere Suche.',
                 'latitude': 'Breitengrad',
                 'longitude': 'Längengrad',
                 'timezone': 'Zeitzonenversatz (Stunden)',
@@ -277,13 +343,27 @@ class I18nManager {
                 'settings.saved': 'Einstellungen erfolgreich gespeichert!',
                 'error.saving': 'Fehler beim Speichern',
                 'error.invalid.coordinates': 'Bitte geben Sie gültige Koordinaten und Zeitzone ein',
+                'error.no.location.selected': 'Bitte suchen und wählen Sie einen Standort',
                 'error.latitude.range': 'Breitengrad muss zwischen -90 und 90 liegen',
                 'error.longitude.range': 'Längengrad muss zwischen -180 und 180 liegen',
                 
                 // Placeholders
                 'placeholder.latitude': 'z.B. 21.4225',
                 'placeholder.longitude': 'z.B. 39.8262',
-                'placeholder.timezone': 'z.B. 3'
+                'placeholder.timezone': 'z.B. 3',
+                
+                // Help
+                'help.instructions': '⬆️⬇️ Navigieren | ⬅️➡️ Menü | OK Aktivieren/Wählen | 🔙 Zurück',
+                
+                // Background Notice
+                'background.notice': 'App sichtbar halten für Benachrichtigungen - Beste für dedizierte Displays',
+                
+                // Test Mode
+                'test.mode': 'Testmodus',
+                'test.mode.label': 'Test-Benachrichtigungen Aktivieren (Alle 3 Min)',
+                'test.mode.off': 'Aus',
+                'test.mode.on': 'Ein (Test)',
+                'test.mode.warning': '⚠️ Testmodus sendet alle 3 Minuten Benachrichtigungen. Nach Test deaktivieren!'
             },
             
             es: {
@@ -307,6 +387,12 @@ class I18nManager {
                 'settings': 'Ajustes',
                 'back': 'Volver',
                 'location.title': 'Ubicación',
+                'location.mode': 'Modo de Ubicación',
+                'location.mode.city': 'Seleccionar País y Ciudad',
+                'location.mode.manual': 'Coordenadas Manuales',
+                'location.search': 'Buscar Ubicación',
+                'location.search.placeholder': 'Escribe nombre de ciudad o país...',
+                'location.no.results': 'No se encontraron ubicaciones. Intenta otra búsqueda.',
                 'latitude': 'Latitud',
                 'longitude': 'Longitud',
                 'timezone': 'Zona Horaria (horas)',
@@ -345,13 +431,27 @@ class I18nManager {
                 'settings.saved': '¡Ajustes guardados correctamente!',
                 'error.saving': 'Error al guardar ajustes',
                 'error.invalid.coordinates': 'Por favor ingrese coordenadas y zona horaria válidas',
+                'error.no.location.selected': 'Por favor busque y seleccione una ubicación',
                 'error.latitude.range': 'La latitud debe estar entre -90 y 90',
                 'error.longitude.range': 'La longitud debe estar entre -180 y 180',
                 
                 // Placeholders
                 'placeholder.latitude': 'ej: 21.4225',
                 'placeholder.longitude': 'ej: 39.8262',
-                'placeholder.timezone': 'ej: 3'
+                'placeholder.timezone': 'ej: 3',
+                
+                // Help
+                'help.instructions': '⬆️⬇️ Navegar | ⬅️➡️ Menú | OK Activar/Seleccionar | 🔙 Volver',
+                
+                // Background Notice
+                'background.notice': 'Mantén app visible para notificaciones - Mejor para pantallas dedicadas',
+                
+                // Test Mode
+                'test.mode': 'Modo Prueba',
+                'test.mode.label': 'Activar Notificaciones de Prueba (Cada 3 min)',
+                'test.mode.off': 'Desactivado',
+                'test.mode.on': 'Activado (Prueba)',
+                'test.mode.warning': '⚠️ El modo prueba envía notificaciones cada 3 minutos. ¡Desactívelo después de probar!'
             }
         };
     }
